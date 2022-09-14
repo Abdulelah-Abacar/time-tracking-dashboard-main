@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
+  body {
+    height: 100vh;
+    font: $body_font rubik;
+    background-color: $very_dark_blue;
+    // overflow-x: hidden;
+  }
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80rem;
+  height: 40rem;
+  @media #{$mobile_max} {
+    width: 95%;
+    height: 95%;
+    padding: 5%;
+  }
+}
+.cards {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: 
+  "main bra1 bra2 bra3"
+  "main bra4 bra5 bra6"
+  ;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  // padding: 1.5rem;
+  @media #{$mobile_max} {
+    grid-template-areas: 
+    "main"
+    "bra1"
+    "bra2"
+    "bra3"
+    "bra4"
+    "bra5"
+    "bra6"
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+  }
+  .card {
+    color: #ffffff;
+    @include borderRadius(1rem);
+    cursor: pointer;
+    box-shadow: .5rem .5rem 1rem #000;
+  }
+  .card1 {
+    background-color: $very_dark_blue;
+    grid-area: main;
+    &:hover {
+      background-color: $dark_blue;
+    }
+    .name {
+      width: 100%;
+      height: 65%;
+      padding: 3rem;
+      background-color: $blue;
+      @include borderRadius(1rem);
+      @media #{$mobile_max} {
+        height: 60%;
+        display: grid;
+        padding: 1.5rem;
+        grid-template-areas: 
+        "img small small"
+        "img h1 h1"
+        ;
+        // place-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+      img {
+        max-width: 40%;
+        border: .2rem solid white;
+        @include borderRadius(50%);
+        @media #{$mobile_max} {
+          grid-area: img;
+          max-width: 50%;
+          justify-self: center;
+        }
+      }
+      small {
+        display: block;
+        margin-top: 3rem;
+        color: $pale_blue;
+        @media #{$mobile_max} {
+          grid-area: small;
+          margin-top: 0;
+          height: fit-content;
+          font-size: 1rem;
+          align-self: center;
+        }
+      }
+      h1 {
+        font: {
+          weight: lighter;
+        }
+        color: white;
+        margin-top: .2rem;
+        @media #{$mobile_max} {
+          grid-area: h1;
+          font: {
+            size: 1rem;
+          }
+          margin-top: 0;
+          height: fit-content;
+        }
+      }
+    }
+    ul {
+      list-style: none;
+      width: 100%;
+      padding: 1rem 3rem;
+      color: $desaturated_blue;
+      font: {
+        size: 1.3rem;
+      }
+      @media #{$mobile_max} {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-around;
+      }
+      li {
+        margin: 1.5rem 0;
+        width: fit-content;
+        cursor: pointer;
+        &.active, &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  .card2 {
+    grid-area: bra1;
+  }
+  .card3 {
+    grid-area: bra2;
+  }
+  .card4 {
+    grid-area: bra3;
+  }
+  .card5 {
+    grid-area: bra4;
+  }
+  .card6 {
+    grid-area: bra5;
+  }
+  .card7 {
+    grid-area: bra6;
+  }
+}
