@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw/hub/responsive-dashboard-templet-MXcDgzNdP7)
 - Live Site URL: [Add live site URL here](https://abdulelah-abacar.github.io/time-tracking-dashboard-main/)
 
 ## My process
