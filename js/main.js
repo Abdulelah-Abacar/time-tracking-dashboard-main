@@ -4,7 +4,7 @@ let lis = document.querySelectorAll(".card1 ul li"),
     prev = document.querySelectorAll(".more-info span:last-of-type");
 
 let reg = new XMLHttpRequest();
-reg.open('GET', '../data.json');
+reg.open('GET', 'https://raw.githubusercontent.com/Abdulelah-Abacar/time-tracking-dashboard-main/master/data.json');
 reg.send()
 lis.forEach((li) => {
   li.addEventListener('click', () => {
