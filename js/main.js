@@ -6,16 +6,19 @@ let lis = document.querySelectorAll(".card1 ul li"),
 let reg = new XMLHttpRequest();
 reg.open('GET', '../data.json');
 reg.send()
-
+lis.forEach((li) => {
+  li.addEventListener('click', () => {
+    lis.forEach(ele => {
+      ele.classList.remove("active")
+    })
+    li.classList.add("active")
+  })
+})
 reg.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     let mainData = JSON.parse(this.responseText);
     lis.forEach(li => {
       li.addEventListener("click", () => {
-        lis.forEach(ele => {
-          ele.classList.remove("active")
-        })
-        li.classList.add("active")
         if (li.classList.contains("active")) {
           if (li.textContent == "Daily") {
             howLong.forEach((ele) => ele.textContent = "Yesterday");
